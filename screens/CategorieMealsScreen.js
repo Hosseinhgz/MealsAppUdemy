@@ -24,10 +24,15 @@ const CategorieMealsScreen = props =>{
         meal => meal.categoryIds.indexOf(catId) >= 0);
 
     const renderMealItem = itemData =>{
+        console.log(itemData)
         return( 
             <MealItem 
             title={itemData.item.title} 
+            duration={itemData.item.duration}
+            complexity={itemData.item.complexity}            
+            affordability={itemData.item.affordability}
             onSelectMeal={()=>{}}
+            image={itemData.item.imageUrl}
             />
             // <View>
             //     <Text>{itemData.item.title}</Text>
@@ -45,7 +50,7 @@ const CategorieMealsScreen = props =>{
             data={displayMeals}
             keyExtractor={(item, index)=> item.id}
             renderItem={renderMealItem}
-            style={{width:'100%', margin:10, }}
+            style={{width:'100%', }}
             />
         </View>
     );

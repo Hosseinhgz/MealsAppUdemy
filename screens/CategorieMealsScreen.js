@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, FlatList, Button, Platform} from 'react-native';
 
 import { CATEGORIES , MEALS } from "../data/dummy-data";
 import Colors from '../constants/Colors';
+import MealItem from '../components/MealItem'
 
 //  version of writting this component
 const CategorieMealsScreen = props =>{
@@ -24,12 +25,16 @@ const CategorieMealsScreen = props =>{
 
     const renderMealItem = itemData =>{
         return( 
-            <View>
-                <Text>{itemData.item.title}</Text>
-                <Button title="Go to Meal details" onPress={()=>{
-                    props.navigation.navigate('MealDetails');
-                }} />
-            </View>
+            <MealItem 
+            title={itemData.item.title} 
+            onSelectMeal={()=>{}}
+            />
+            // <View>
+            //     <Text>{itemData.item.title}</Text>
+            //     <Button title="Go to Meal details" onPress={()=>{
+            //         props.navigation.navigate('MealDetails');
+            //     }} />
+            // </View>
             );
     };
 
@@ -40,6 +45,7 @@ const CategorieMealsScreen = props =>{
             data={displayMeals}
             keyExtractor={(item, index)=> item.id}
             renderItem={renderMealItem}
+            style={{width:'100%', margin:10, }}
             />
         </View>
     );
@@ -64,6 +70,7 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:"center",
         alignItems:"center",
+        margin:10,
     }
 
 })

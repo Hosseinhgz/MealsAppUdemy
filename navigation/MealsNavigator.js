@@ -10,6 +10,8 @@ import CategorieMealsScreen from '../screens/CategorieMealsScreen'
 import MealDetailsScreen from '../screens/MealDetailsScreen'
 import 'react-native-gesture-handler';
 import Colors from '../constants/Colors';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import HeaderButton from '../components/HeaderButton'
 
 
 const Stack = createStackNavigator();
@@ -46,7 +48,13 @@ function MealsNavigator () {
           component={MealDetailsScreen}           
           options={{
             headerTitle: 'Meals Details',
-            headerRight: ()=>(<Text>FAV!!!</Text>),
+            headerRight: ()=>(<HeaderButtons HeaderButtonComponent={HeaderButton}>
+              <Item 
+              title='Favorite' 
+              iconName='heartbeat' 
+              onPress={()=>{console.log('Marked as Favorite')}}
+              />
+            </HeaderButtons>),
             headerStyle:{
               backgroundColor: Platform.OS==='android' ? Colors.color2 : Colors.color0,
             },

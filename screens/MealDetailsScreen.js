@@ -1,6 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet, Button} from 'react-native';
 
+
 import { MEALS } from '../data/dummy-data';
 
 const MealDetailsScreen = props =>{

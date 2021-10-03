@@ -10,7 +10,7 @@ const CategorieMealsScreen = props =>{
 // props have two part {route and navigation}
 // old version of writting this component
 // const CategorieMealsScreen = props =>{
-    console.log(props.navigation)
+    //console.log(props.navigation)
 
 
 
@@ -18,7 +18,7 @@ const CategorieMealsScreen = props =>{
      const { itemId } = props.route.params;
      const catId = itemId;
      const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
-     props.navigation.setOptions({ headerTitle: selectedCategory.title })
+     props.navigation.setOptions({ headerTitle: selectedCategory.title });
     
     const displayMeals = MEALS.filter(
         meal => meal.categoryIds.indexOf(catId) >= 0);
@@ -31,7 +31,7 @@ const CategorieMealsScreen = props =>{
             duration={itemData.item.duration}
             complexity={itemData.item.complexity}            
             affordability={itemData.item.affordability}
-            onSelectMeal={()=>{}}
+            onSelectMeal={()=>{props.navigation.navigate('MealDetails' ,{mealId : itemData.item.id} )}}
             image={itemData.item.imageUrl}
             />
             // <View>

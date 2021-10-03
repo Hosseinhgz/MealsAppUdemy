@@ -46,6 +46,7 @@ function MealsNavigator () {
           component={MealDetailsScreen}           
           options={{
             headerTitle: 'Meals Details',
+            headerRight: ()=>(<Text>FAV</Text>),
             headerStyle:{
               backgroundColor: Platform.OS==='android' ? Colors.color2 : Colors.color0,
             },

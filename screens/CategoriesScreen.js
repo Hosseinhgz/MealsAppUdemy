@@ -7,11 +7,12 @@ import CategoryGridTile from '../components/CategoryGridTile'
 
 const CategoriesScreen = props =>{
 
+
     const renderGridItem = itemData => {
         return( 
             <CategoryGridTile 
             title={itemData.item.title}
-            onSelect={()=> props.navigation.navigate('CategoryMeals',{categoryId: itemData.item.id ,  itemId:itemData.item.id })}
+            onSelect={()=> props.navigation.navigate('CategoryMeals',{ itemId:itemData.item.id })}
             color= {itemData.item.color}
             />
             );

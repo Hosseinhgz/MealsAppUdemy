@@ -18,7 +18,6 @@ const Stack = createStackNavigator();
 function MealsNavigator () {
 
     return (
-      <NavigationContainer>
         <Stack.Navigator >
           <Stack.Screen 
           name="Categories" 
@@ -62,7 +61,6 @@ function MealsNavigator () {
           }} 
           />
         </Stack.Navigator>
-      </NavigationContainer>
     );
 
   }

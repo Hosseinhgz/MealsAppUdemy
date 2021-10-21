@@ -5,7 +5,8 @@ import AppLoading from 'expo-app-loading';
 
 import 'react-native-gesture-handler';
 import { enableScreens } from 'react-native-screens';
-import MealsNavigator from './navigation/MealsNavigator';
+//import MealsNavigator from './navigation/MealsNavigator';
+import BottomTabsNavigation from './navigation/BottomTabsNavigation';
 
 
 enableScreens()
@@ -31,7 +32,7 @@ export default function App() {
   };
 
   return (
-      <MealsNavigator />
+      <BottomTabsNavigation />
   );
 };
 
